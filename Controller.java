@@ -43,7 +43,7 @@ class Controller{
                     break;
             }
         }
-        DatabaseDAO.closeConnection(stmt);
+        DatabaseDAO.closeConnection(rs, stmt);
     }
 
     void addNewBook(Statement stmt){
