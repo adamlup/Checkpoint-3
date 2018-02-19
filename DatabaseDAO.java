@@ -19,4 +19,19 @@ class DatabaseDAO{
         return stmt;
     }
 
+    public static void closeConnection(ResultSet rs, Statement stmt){
+        try {
+            if(rs!=null) {
+                rs.close();
+                stmt.close();
+            }else {
+                stmt.close();
+            }
+        }
+        catch (Exception e){
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
+            }
+    }
+
 }
